@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Application Error</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 50px;
+            background-color: #f8d7da; /* Light red background for error */
+            color: #721c24; /* Dark red text for error */
+            border: 1px solid #f5c6cb;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        h1 {
+            color: #a71d2a;
+            margin-bottom: 10px;
+        }
+        p {
+            margin-bottom: 15px;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .error-details {
+            background-color: #fdecea;
+            border: 1px solid #f9d4d8;
+            padding: 15px;
+            border-radius: 3px;
+            margin-top: 20px;
+            font-family: monospace;
+            font-size: 0.9em;
+            white-space: pre-wrap; /* Preserve formatting and wrap text */
+        }
+    </style>
+</head>
+<body>
+    <h1>Oops! An Error Occurred</h1>
+    <p>Something went wrong while processing your request. Please try again later.</p>
+
+    {% if error %}
+    <div class="error-details">
+        <h2>Error Details:</h2>
+        <p>{{ error }}</p>
+    </div>
+    {% endif %}
+
+    <p><a href="{{ url_for('index') }}">Go back to the main page</a></p>
+</body>
+</html>
